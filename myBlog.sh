@@ -1,8 +1,14 @@
 #!/bin/bash
 
-# Create directories for posts and pages
+# Create the blog directory
+mkdir my-blog
+cd my-blog
+
+# Create directory for posts
 mkdir -p posts
-mkdir -p pages
+
+# Create the figures directory
+mkdir figures
 
 # Create sample post and page
 cat <<EOF > posts/sample-post.html
@@ -19,26 +25,8 @@ cat <<EOF > posts/sample-post.html
 </html>
 EOF
 
-cat <<EOF > pages/sample-page.html
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Sample Page</title>
-</head>
-<body>
-    <h1>Sample Page</h1>
-    <p>This is a sample page.</p>
-</body>
-</html>
-EOF
-
-# Generate index.html
-cat <<EOF > index.html
-<!DOCTYPE html>
-<html>
-<head>
-    <title>My Blog</title>
-    <style>
+# Create the style.css file
+cat <<EOF > style.css
         body {
             font-family: Arial, sans-serif;
             max-width: 800px;
@@ -91,8 +79,13 @@ cat <<EOF > index.html
         a:hover {
             text-decoration: underline;
         }
-    </style>
-</head>
+        
+# Generate index.html
+cat <<EOF > index.html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Blog</title></head>
 <body>
     <header>
         <h1>My Blog</h1>
