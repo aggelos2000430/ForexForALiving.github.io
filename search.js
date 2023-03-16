@@ -1,4 +1,4 @@
-var searchIndex = [  { title: "The EUR/USD 4H Chart", url: "../posts/EURUSD.html" },  { title: "Major Pairs", url: "../posts/major-pairs.html" },  { title: "Exotic Pairs", url: "../posts/exotic-pairs.html" }];
+var searchIndex = [  { title: "The EUR/USD 4H Chart", url: "posts/EURUSD.html" },  { title: "Major Pairs", url: "posts/major-pairs.html" },  { title: "Exotic Pairs", url: "posts/exotic-pairs.html" }];
 
 document.querySelector('form').addEventListener('submit', function(event) {
   event.preventDefault();
