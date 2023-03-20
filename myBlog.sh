@@ -4,8 +4,9 @@
 mkdir my-blog
 cd my-blog
 
-# Create directory for posts
+# Create directory for posts and pages
 mkdir -p posts
+mkdir -p pages
 
 # Create the figures directory
 mkdir figures
@@ -79,6 +80,7 @@ cat <<EOF > style.css
         a:hover {
             text-decoration: underline;
         }
+EOF
         
 # Generate index.html
 cat <<EOF > index.html
@@ -107,7 +109,7 @@ cat <<EOF > index.html
         <ul>
             $(find posts -name '*.html' | sort -r | while read post; do
                 title=$(sed -n 's/.*<title>\(.*\)<\/title>.*/\1/p' "$post")
-                date=$(sed -n '(?<=<p>Date: ).*?(?=</p>)' "$post")
+                date=$(sed -n 's/.*<p>Date: \(.*\)<\/p>.*/\1/p' "$post")
                 echo "<li><article><h3><a href=\"$(basename "$post")\">$title</a></h3><time datetime=\"$date\">$date</time></article></li>"
             done)
         </ul>
